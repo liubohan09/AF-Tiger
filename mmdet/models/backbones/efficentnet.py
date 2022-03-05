@@ -189,7 +189,7 @@ class EfficientNet(BaseModule):
     # - expand_ratio: The expand_ratio of the mid_channels
     # - block_type: -1: Not a block, 0: InvertedResidual, 1: EdgeResidual
     layer_settings = {
-        'c': [[[3, 32, 0, 1, 0, -1]],
+        'c': [[[3, 32, 0, 2, 0, -1]],
               [[3, 16, 4, 1, 1, 0]],
               [[3, 24, 4, 2, 6, 0],
                [3, 24, 4, 1, 6, 0]],
@@ -204,9 +204,9 @@ class EfficientNet(BaseModule):
               [[5, 96, 4, 2, 6, 0],
                [5, 96, 4, 1, 6, 0],
                [5, 96, 4, 1, 6, 0],
-               [5, 96, 4, 1, 6, 0]],
-              [[3, 160, 4, 2, 6, 0]],
-              [[1, 320, 0, 1, 0, -1]]
+               [5, 96, 4, 1, 6, 0],
+               [3, 160, 4, 1, 6, 0]],
+              [[1, 640, 0, 1, 0, -1]]
               ],
         'b': [[[3, 32, 0, 2, 0, -1]],
               [[3, 16, 4, 1, 1, 0]],
