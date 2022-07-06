@@ -59,10 +59,7 @@ __all__ = [
     'CascadeRPNHead', 'EmbeddingRPNHead', 'LDHead', 'CascadeRPNHead',
     'AutoAssignHead', 'DETRHead', 'YOLOFHead', 'DeformableDETRHead',
     'SOLOHead', 'DecoupledSOLOHead', 'CenterNetHead', 'YOLOXHead',
-<<<<<<< HEAD
-    'DecoupledSOLOLightHead', 'LADHead', 'TOODHead', 'MaskFormerHead','NanoDetHead','PicoHead','PlusHead','YOLOXPlusHead','nanoplus_head','GFLSmallHead'
-=======
     'DecoupledSOLOLightHead', 'LADHead', 'TOODHead', 'MaskFormerHead',
-    'Mask2FormerHead', 'SOLOV2Head', 'DDODHead'
->>>>>>> 56e42e72cdf516bebb676e586f408b98f854d84c
+    'Mask2FormerHead', 'SOLOV2Head', 'DDODHead','PicoHead','PlusHead','YOLOXPlusHead','nanoplus_head','GFLSmallHead'
+
 ]
