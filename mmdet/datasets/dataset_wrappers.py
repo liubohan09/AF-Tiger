@@ -4,6 +4,7 @@ import collections
 import copy
 import math
 from collections import defaultdict
+import random
 
 import numpy as np
 from mmcv.utils import build_from_cfg, print_log
@@ -358,8 +359,10 @@ class MultiImageMixDataset:
     def __init__(self,
                  dataset,
                  pipeline,
+                 random_skip_pr=0.5,
                  dynamic_scale=None,
-                 skip_type_keys=None):
+                 skip_type_keys=None,
+                 random_skip_type_keys=('Mosaic', 'RandomAffine', 'MixUp')):
         if dynamic_scale is not None:
             raise RuntimeError(
                 'dynamic_scale is deprecated. Please use Resize pipeline '
@@ -371,6 +374,8 @@ class MultiImageMixDataset:
                 for skip_type_key in skip_type_keys
             ])
         self._skip_type_keys = skip_type_keys
+        self._random_skip_type_keys=random_skip_type_keys
+        self._random_skip_pr =random_skip_pr
 
         self.pipeline = []
         self.pipeline_types = []
@@ -394,12 +399,16 @@ class MultiImageMixDataset:
 
     def __getitem__(self, idx):
         results = copy.deepcopy(self.dataset[idx])
+        random_skip =(random.random()>self._random_skip_pr)
         for (transform, transform_type) in zip(self.pipeline,
                                                self.pipeline_types):
             if self._skip_type_keys is not None and \
                     transform_type in self._skip_type_keys:
                 continue
-
+            if self._random_skip_type_keys is not None and \
+                     random_skip and \
+                    transform_type in self._random_skip_type_keys:
+                continue
             if hasattr(transform, 'get_indexes'):
                 indexes = transform.get_indexes(self.dataset)
                 if not isinstance(indexes, collections.abc.Sequence):

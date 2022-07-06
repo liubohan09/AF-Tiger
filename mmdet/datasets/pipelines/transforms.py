@@ -9,6 +9,7 @@ import mmcv
 import numpy as np
 from numpy import random
 
+import matplotlib.pyplot as pyplot
 from mmdet.core import PolygonMasks, find_inside_bboxes
 from mmdet.core.evaluation.bbox_overlaps import bbox_overlaps
 from ..builder import PIPELINES
@@ -2126,6 +2127,7 @@ class Mosaic:
         mosaic_labels = mosaic_labels[inside_inds]
 
         results['img'] = mosaic_img
+        # cv2.imwrite("mosica1.png", results['img'])
         results['img_shape'] = mosaic_img.shape
         results['gt_bboxes'] = mosaic_bboxes
         results['gt_labels'] = mosaic_labels
@@ -2440,6 +2442,7 @@ class MixUp:
         mixup_gt_labels = mixup_gt_labels[inside_inds]
 
         results['img'] = mixup_img.astype(np.uint8)
+        # cv2.imwrite("mixup.png", results['img'])
         results['img_shape'] = mixup_img.shape
         results['gt_bboxes'] = mixup_gt_bboxes
         results['gt_labels'] = mixup_gt_labels
@@ -2580,6 +2583,7 @@ class RandomAffine:
             dsize=(width, height),
             borderValue=self.border_val)
         results['img'] = img
+        # cv2.imwrite("mosica.png", results['img'])
         results['img_shape'] = img.shape
 
         for key in results.get('bbox_fields', []):

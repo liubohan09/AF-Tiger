@@ -37,6 +37,7 @@ class InvertedResidual(BaseModule):
                  kernel_size=3,
                  stride=1,
                  se_cfg=None,
+                 with_expand_conv=True,
                  conv_cfg=None,
                  norm_cfg=dict(type='BN'),
                  act_cfg=dict(type='ReLU'),
@@ -50,10 +51,12 @@ class InvertedResidual(BaseModule):
         self.drop_path = DropPath(
             drop_path_rate) if drop_path_rate > 0 else nn.Identity()
         self.with_se = se_cfg is not None
-        self.with_expand_conv = (mid_channels != in_channels)
+        self.with_expand_conv = with_expand_conv
 
         if self.with_se:
             assert isinstance(se_cfg, dict)
+        if not self.with_expand_conv:
+            assert mid_channels == in_channels
 
         if self.with_expand_conv:
             self.expand_conv = ConvModule(

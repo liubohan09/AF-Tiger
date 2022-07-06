@@ -32,6 +32,7 @@ class DarknetBottleneck(BaseModule):
     def __init__(self,
                  in_channels,
                  out_channels,
+                 kernel_size=3,
                  expansion=0.5,
                  add_identity=True,
                  use_depthwise=False,
@@ -52,9 +53,9 @@ class DarknetBottleneck(BaseModule):
         self.conv2 = conv(
             hidden_channels,
             out_channels,
-            3,
+            kernel_size=kernel_size,
             stride=1,
-            padding=1,
+            padding=(kernel_size - 1) // 2,
             conv_cfg=conv_cfg,
             norm_cfg=norm_cfg,
             act_cfg=act_cfg)
@@ -96,6 +97,7 @@ class CSPLayer(BaseModule):
     def __init__(self,
                  in_channels,
                  out_channels,
+                 kernel_size=3,
                  expand_ratio=0.5,
                  num_blocks=1,
                  add_identity=True,
@@ -132,6 +134,7 @@ class CSPLayer(BaseModule):
             DarknetBottleneck(
                 mid_channels,
                 mid_channels,
+                kernel_size,
                 1.0,
                 add_identity,
                 use_depthwise,

@@ -27,10 +27,15 @@ class YOLOXLrUpdaterHook(CosineAnnealingLrUpdaterHook):
     def get_warmup_lr(self, cur_iters):
 
         def _get_warmup_lr(cur_iters, regular_lr):
+            if self.warmup == 'linear':
+                k = (1 - cur_iters / self.warmup_iters) * (1 -
+                                                           self.warmup_ratio)
+                warmup_lr = [_lr * (1 - k) for _lr in regular_lr]
+            elif self.warmup == 'exp':
             # exp warmup scheme
-            k = self.warmup_ratio * pow(
-                (cur_iters + 1) / float(self.warmup_iters), 2)
-            warmup_lr = [_lr * k for _lr in regular_lr]
+                k = self.warmup_ratio * pow(
+                    (cur_iters + 1) / float(self.warmup_iters), 2)
+                warmup_lr = [_lr * k for _lr in regular_lr]
             return warmup_lr
 
         if isinstance(self.base_lr, dict):

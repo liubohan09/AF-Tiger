@@ -38,6 +38,12 @@ from .yolact_head import YOLACTHead, YOLACTProtonet, YOLACTSegmHead
 from .yolo_head import YOLOV3Head
 from .yolof_head import YOLOFHead
 from .yolox_head import YOLOXHead
+from .nanodet_head import NanoDetHead
+from .pico_head import PicoHead
+from .plus_head import PlusHead
+from .yolox_head_plus import YOLOXPlusHead
+from .nanoplus_head import NanoPlusHead
+from .gflsmall import GFLSmallHead
 
 __all__ = [
     'AnchorFreeHead', 'AnchorHead', 'GuidedAnchorHead', 'FeatureAdaption',
@@ -50,5 +56,5 @@ __all__ = [
     'CascadeRPNHead', 'EmbeddingRPNHead', 'LDHead', 'CascadeRPNHead',
     'AutoAssignHead', 'DETRHead', 'YOLOFHead', 'DeformableDETRHead',
     'SOLOHead', 'DecoupledSOLOHead', 'CenterNetHead', 'YOLOXHead',
-    'DecoupledSOLOLightHead', 'LADHead', 'TOODHead', 'MaskFormerHead'
+    'DecoupledSOLOLightHead', 'LADHead', 'TOODHead', 'MaskFormerHead','NanoDetHead','PicoHead','PlusHead','YOLOXPlusHead','nanoplus_head','GFLSmallHead'
 ]
