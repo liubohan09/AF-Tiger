@@ -9,7 +9,7 @@ from mmcv.cnn.bricks import ConvModule, DropPath
 from mmcv.runner import BaseModule, Sequential
 from mmdet.models.backbones.csp_darknet import SPPBottleneck
 from mmdet.models.utils import InvertedResidual, SELayer, make_divisible
-from ..builder import BACKBONES
+from mmdet.models.builder import BACKBONES
 
 
 class EdgeResidual(BaseModule):

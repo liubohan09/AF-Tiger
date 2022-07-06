@@ -15,7 +15,7 @@ from .resnext import ResNeXt
 from .ssd_vgg import SSDVGG
 from .swin import SwinTransformer
 from .trident_resnet import TridentResNet
-from .efficentnet import EfficientNet
+from .efficientnet import EfficientNet
 from .shufflenetv2 import ShuffleNetV2
 from  .csp_ghost import CSPGhost
 from  .efficientnet_lite import EfficientNetLite
