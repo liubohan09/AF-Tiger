@@ -57,9 +57,7 @@ __all__ = [
     'VFNet', 'DETR', 'TridentFasterRCNN', 'SparseRCNN', 'SCNet', 'SOLO',
     'SOLOv2', 'DeformableDETR', 'AutoAssign', 'YOLOF', 'CenterNet', 'YOLOX',
     'TwoStagePanopticSegmentor', 'PanopticFPN', 'QueryInst', 'LAD', 'TOOD',
-<<<<<<< HEAD
-    'MaskFormer','NanoPlus','YOLOXPlus','Plus'
-=======
-    'MaskFormer', 'DDOD', 'Mask2Former'
->>>>>>> 56e42e72cdf516bebb676e586f408b98f854d84c
+    'MaskFormer','NanoPlus','YOLOXPlus','Plus',
+    'DDOD', 'Mask2Former'
+
 ]
