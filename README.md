@@ -18,6 +18,6 @@ copy testset to ATRW/test
 
 python tools/train.py AF-tigernet.py
 
-##test
+## test
 
-
+python tools/test.py AF-tigernet.py weights/epoch_300.pth  --eval bbox
