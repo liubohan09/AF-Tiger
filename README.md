@@ -12,6 +12,12 @@ Please install mmdetection at the following website: https://github.com/open-mml
 ## train
 
 Download data in https://cvwc2019.github.io/challenge.html
+
 copy trainset and valset to ATRW/images
 copy testset to ATRW/test
+
+python train.py AF-tigernet.py
+
+##test
+
 
