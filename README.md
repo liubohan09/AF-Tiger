@@ -5,15 +5,41 @@ AFTigerNet is a anchor-free object detection framework originally designed for A
 
 ## install
 
-git clone https://github.com/liubohan09/AF-Tiger.git
+**Step 0**. Download and install Miniconda from the official website https://docs.conda.io/en/latest/miniconda.html.
 
-Please install mmdetection at the following website: https://github.com/open-mmlab/mmdetection/blob/master/docs/en/get_started.md/#Installation
+**Step 1**.
+```shell
+conda create --name aftigernet python=3.8 -y
+conda activate aftigernet
+```
+
+**Step 2.** Install PyTorch following [official instructions](https://pytorch.org/get-started/locally/), e.g.
+
+**Step 3.** Install [MMCV](https://github.com/open-mmlab/mmcv) using [MIM](https://github.com/open-mmlab/mim).
+
+```shell
+pip install -U openmim
+mim install mmcv-full
+```
+**Step 4.** Install AF-tigernet.
+
+
+```shell
+git clone https://github.com/liubohan09/AF-Tiger.git
+cd AF-Tiger
+pip install -v -e .
+# "-v" means verbose, or more output
+# "-e" means installing a project in editable mode,
+# thus any local modifications made to the code will take effect without reinstallation.
+```
+
 
 ## train
 
 Download data in https://cvwc2019.github.io/challenge.html
 
 copy trainset and valset to ATRW/images
+
 copy testset to ATRW/test
 
 python tools/train.py AF-tigernet.py
