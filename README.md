@@ -56,3 +56,10 @@ python tools/test.py AF-tigernet.py weights/epoch_300.pth  --eval bbox
 python demo/image_demo.py --img-path AF-tigernet.py weights/epoch_300.pth --out file path
 ```
 
+**video_demo.**
+
+```shell
+python demo/video_demo.py --video-path AF-tigernet.py weights/epoch_300.pth --score-thr 0.4 --out show.mp4
+# if add --show,  it can save images of all video frames
+```
+
