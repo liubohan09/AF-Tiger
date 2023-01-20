@@ -69,5 +69,11 @@ python demo/video_demo.py --video-path AF-tigernet.py weights/epoch_300.pth --sc
 python demo/webcam_demo.py AF-tigernet.py weights/epoch_300.pth 
 ```
 
+## deploy
 
+Convert the model to onnx
+
+```shell
+python tools/deployment/mmdet2onnx.py AF-tigernet.py weights/epoch_300.pth --input-img (img-path) --output-file (out-path)
+```
 
