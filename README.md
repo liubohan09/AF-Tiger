@@ -53,7 +53,7 @@ python tools/test.py AF-tigernet.py weights/epoch_300.pth  --eval bbox
 **image_demo.**
 
 ```shell
-python demo/image_demo.py --img-path AF-tigernet.py weights/epoch_300.pth --out OUT-PATH
+python demo/image_demo.py --img-path AF-tigernet.py weights/epoch_300.pth --out OUT_PATH
 ```
 
 **video_demo.**
@@ -74,7 +74,7 @@ python demo/webcam_demo.py AF-tigernet.py weights/epoch_300.pth
 Convert the model to onnx
 
 ```shell
-python tools/deployment/mmdet2onnx.py AF-tigernet.py weights/epoch_300.pth --input-img IMG-PATH --output-file OUT-PATH
+python tools/deployment/mmdet2onnx.py AF-tigernet.py weights/epoch_300.pth --input-img IMG_PATH --output-file OUT_PATH
 ```
 
 ## Thanks
