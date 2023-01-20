@@ -77,6 +77,7 @@ Convert the model to onnx
 python tools/deployment/mmdet2onnx.py AF-tigernet.py weights/epoch_300.pth --input-img ${IMG_PATH} --output-file ${OUT_PATH}
 ```
 
+You can also convert the model to ncnn with an online tool https://convertmodel.com/ .
 ## Thanks
 
 https://github.com/Tencent/ncnn
