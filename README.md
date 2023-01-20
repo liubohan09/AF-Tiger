@@ -47,3 +47,12 @@ python tools/train.py AF-tigernet.py
 ## test
 
 python tools/test.py AF-tigernet.py weights/epoch_300.pth  --eval bbox
+
+## demo
+
+**image_demo.**
+
+```shell
+python demo/image_demo.py --img-path AF-tigernet.py weights/epoch_300.pth --out file path
+```
+
