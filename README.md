@@ -63,3 +63,11 @@ python demo/video_demo.py --video-path AF-tigernet.py weights/epoch_300.pth --sc
 # if add --show,  it can save images of all video frames
 ```
 
+**webcam_demo.**
+
+```shell
+python demo/webcam_demo.py AF-tigernet.py weights/epoch_300.pth 
+```
+
+
+
