@@ -42,16 +42,19 @@ def main():
         video_writer = cv2.VideoWriter(
             args.out, fourcc, video_reader.fps,
             (video_reader.width, video_reader.height))
-
+    out_dir = './tiger'
+    i = 0
     for frame in mmcv.track_iter_progress(video_reader):
         result = inference_detector(model, frame)
-        frame = model.show_result(frame, result, score_thr=args.score_thr)
+        frame = model.show_result(frame, result, score_thr=args.score_thr,bbox_color='coco',
+        text_color=(200, 200, 200),mask_color='coco')
         if args.show:
             cv2.namedWindow('video', 0)
             mmcv.imshow(frame, 'video', args.wait_time)
+            cv2.imwrite("{}/{}.png".format(out_dir, i), frame)
         if args.out:
             video_writer.write(frame)
-
+        i=i+1
     if video_writer:
         video_writer.release()
     cv2.destroyAllWindows()
