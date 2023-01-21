@@ -53,7 +53,7 @@ python tools/test.py AF-tigernet.py weights/epoch_300.pth  --eval bbox
 **image_demo.**
 
 ```shell
-python demo/image_demo.py --img-path AF-tigernet.py weights/epoch_300.pth --out ${OUT_PATH}
+python demo/image_demo.py --img-path AF-tigernet.py weights/epoch_300.pth
 ```
 
 **video_demo.**
