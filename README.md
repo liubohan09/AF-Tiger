@@ -68,7 +68,9 @@ python demo/video_demo.py --video-path AF-tigernet.py weights/epoch_300.pth --sc
 ```shell
 python demo/webcam_demo.py AF-tigernet.py weights/epoch_300.pth 
 ```
-
+**andriod_ncnn_demo.**
+go to 
+https://github.com/liubohan09/demo-android-ncnn
 ## deploy
 
 Convert the model to onnx
